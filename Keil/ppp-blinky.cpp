@@ -90,20 +90,13 @@ const static char rootWebPage[] = "\
 <html>\
 <head>\
 <title>mbed PPP-Blinky</title>\r\n\
-<script>\r\n\
-window.onload=function(){\
-setInterval(function(){function x(){return document.getElementById('w');};\
-x().textContent=parseInt(x().textContent)+1;},100);};\r\n\
-</script>\r\n\
 </head>\
-<body style=\"font-family: sans-serif; font-size:20px; text-align:center; color:#807070\">\
-<h1>mbed PPP-Blinky Up and Running</h1>\
-<h1 id=\"w\">0</h1>\
-<h1><a href=\"http://bit.ly/pppBlink2\">Source on mbed</a></h1>\
-<h1><a href=\"/ws\">WebSocket Demo</a></h1>\
-<h1><a href=\"/x\">Benchmark 1</a></h1>\
-<h1><a href=\"/xb\">Benchmark 2</a></h1>\
-<h1><a href=\"http://jsfiddle.net/d26cyuh2/\">JSFiddle Demo</a></h1>\
+<body>\
+<form action = \"\" method = \"post\">\
+<button name=\"toggle\" value=\"LED Toggle\">\
+Toggle\
+</button>\
+</form>\
 </body>\
 </html>\r\n"; // size = 644 bytes plus 1 null byte = 645 bytes
 
@@ -181,7 +174,7 @@ void pppInitStruct()
 /// Toggle the LED on every second PPP packet received
 void led1Toggle()
 {
-    led1 = (ppp.ledState >> 1) & 1; // use second bit, in other words toggle LED only every second packet
+    led1 = ppp.ledState & 1; // use second bit, in other words toggle LED only every second packet
     ppp.ledState++;
 }
 
@@ -296,7 +289,7 @@ void dumpPPPFrame()
 /// Process a received PPP frame
 void processPPPFrame(int start, int end)
 {
-    led1Toggle(); // change led1 state on every frame we receive
+    //led1Toggle(); // change led1 state on every frame we receive
     if(start==end) {
         return; // empty frame
     }
@@ -884,6 +877,7 @@ int httpResponse(char * dataStart, int * flags)
 
     httpGetRoot = strncmp(dataStart, "GET / HTTP/1.", 13);  // found a GET to the root directory
     httpGetx    = strncmp(dataStart, "GET /x", 6);          // found a GET to /x which we will treat special (anything starting with /x, e.g. /x, /xyz, /xABC?pqr=123
+    
     httpGet5    = dataStart[5]; // the first character in the path name, we use it for special functions later on
     httpGet6    = dataStart[6]; // the second character in the path name, we use it for special functions later on
     // for example, you could try this using netcat (nc):    echo "GET /x" | nc 172.10.10.2
@@ -1038,6 +1032,8 @@ void tcpHandler()
             if ( (strncmp(tcpDataIn, "GET /", 5) == 0) ) { // check for an http GET command
                 flagsOut = TCP_FLAG_ACK | TCP_FLAG_PSH; // we have data, set the PSH flag
                 dataLen = httpResponse(tcpDataOut, &flagsOut); // send an http response
+            } else if ( (strncmp(tcpDataIn, "POST", 4) == 0) ) {
+                led1Toggle();
             } else {
                 dataLen = tcpResponse(tcpDataOut,tcpDataSize, &flagsOut); // not an http GET, handle as a tcp connection
                 if (dataLen > 0) flagsOut = TCP_FLAG_ACK | TCP_FLAG_PSH; // if we have any data set the PSH flag
