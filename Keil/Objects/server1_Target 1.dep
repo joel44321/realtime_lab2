@@ -1,27 +1,0 @@
-Dependencies for Project 'server1', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x5A0975BD)(--c99 -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\MKW41Z512xxx4-I.\RTE\RTOS-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\CMSIS\RTOS2\FreeRTOS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\CMSIS\RTOS2\FreeRTOS\Include1-IC:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\portable\RVDS\ARM_CM0-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.1.1\CMSIS\Driver\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.1.1\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.1.1\CMSIS\RTOS2\Include-IC:\Keil_v5\ARM\PACK\Keil\Kinetis_KWxx_DFP\1.7.0\Device\Include-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\Board-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\Network\Include-IC:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\USB\Include-D__UVISION_VERSION="524" -D_RTE_ -DMKW41Z512xxx4-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-F (C:\Keil_v5\ARM\PACK\Keil\Kinetis_KWxx_DFP\1.7.0\Boards\NXP\FRDM-KW41Z\Common\LED_FRDM-KW41Z.c)(0x57D6B86C)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\CMSIS\RTOS2\FreeRTOS\Source\ARM\clib_arm.c)(0x598B2142)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\CMSIS\RTOS2\FreeRTOS\Source\cmsis_os1.c)(0x598B2142)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\CMSIS\RTOS2\FreeRTOS\Source\cmsis_os2.c)(0x598DD422)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\CMSIS\RTOS2\FreeRTOS\Source\os_systick.c)(0x598DD422)()
-F (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\USB\Driver\USART_CDC_ACM.c)(0x58DB807E)()
-F (RTE\Device\MKW41Z512xxx4\startup_MKW41Z4.s)(0x57D6B86C)()
-F (RTE\Device\MKW41Z512xxx4\system_MKW41Z4.c)(0x57D6B86C)()
-F (RTE\Device\MKW41Z512xxx4\system_MKW41Z4.h)(0x57D6B86C)()
-F (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\Network\Driver\Modem_Standard.c)(0x58CFCAE4)()
-F (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\Network\Lib\ARM\Net_CM0_L.lib)(0x58E770E4)()
-F (RTE\Network\Net_Config.c)(0x5706514A)()
-F (RTE\Network\Net_Config_SLIP.h)(0x5A097394)()
-F (RTE\Network\Net_Config_TCP.h)(0x5757E9EA)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\CMSIS\RTOS2\FreeRTOS\Source\freertos_evr.c)(0x598DD422)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\event_groups.c)(0x598B214C)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\list.c)(0x598B214C)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\portable\MemMang\heap_4.c)(0x598B214E)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\portable\RVDS\ARM_CM0\port.c)(0x598B214E)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\queue.c)(0x598B214E)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\tasks.c)(0x598B214E)()
-F (C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\9.1.0\Source\timers.c)(0x598B214E)()
-F (RTE\RTOS\FreeRTOSConfig.h)(0x598DD422)()
-F (C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\USB\Lib\ARM\USB_CM0_L.lib)(0x58F0AFBA)()
-F (RTE\USB\USBH_Config_CDC.h)(0x5877623C)()
